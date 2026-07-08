@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>SkinSeoul — Shared</title>
+<style>
+  :root { --purple:#582DB5; --deep:#311275; --ink:#04000c; --muted:#605D66; --line:#E4E4E7; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink);
+    background:#fff; -webkit-font-smoothing:antialiased; }
+  .hero { background:var(--ink); color:#fff; padding:56px 32px 44px;
+    background-image:radial-gradient(700px 340px at 0% 120%, rgba(165,47,255,.35), transparent 60%); }
+  .wrap { max-width:960px; margin:0 auto; }
+  .mark { display:flex; align-items:center; gap:10px; margin-bottom:20px; }
+  .mark svg { width:26px; height:26px; }
+  .mark b { font-size:15px; letter-spacing:-.01em; }
+  h1 { margin:0; font-size:34px; letter-spacing:-.03em; }
+  .sub { margin-top:8px; color:rgba(255,255,255,.6); font-size:15px; }
+  .grid { max-width:960px; margin:32px auto 64px; padding:0 32px;
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
+  .card { display:block; text-decoration:none; color:inherit; border:1px solid var(--line);
+    border-radius:16px; padding:20px; transition:box-shadow .2s, border-color .12s; }
+  .card:hover { border-color:var(--purple); box-shadow:0 8px 24px rgba(15,13,81,.08); }
+  .ct { font-size:17px; font-weight:600; letter-spacing:-.01em; }
+  .cd { font-size:14px; color:var(--muted); margin-top:6px; line-height:1.5; }
+  .cm { font-size:12px; color:#9d9ba1; margin-top:14px; font-variant-numeric:tabular-nums; }
+  .foot { max-width:960px; margin:0 auto 48px; padding:0 32px; color:#9d9ba1; font-size:12px; }
+</style></head><body>
+  <header class="hero"><div class="wrap">
+    <div class="mark">
+      <svg viewBox="0 0 160 160"><ellipse cx="65.5" cy="85" rx="31" ry="48" transform="rotate(-26 65.5 85)" fill="#A52FFF"/><ellipse cx="94.5" cy="85" rx="31" ry="48" transform="rotate(26 94.5 85)" fill="#582DB5" opacity=".9"/></svg>
+      <b>SkinSeoul</b>
+    </div>
+    <h1>Shared</h1>
+    <div class="sub">Externally shareable previews and dashboards.</div>
+  </div></header>
+  <main class="grid">
+      <a class="card" href="agent-command-center/">
+        <div class="ct">Agent Command Center</div>
+        <div class="cd">AI 에이전트 통합 커맨드 센터 대시보드 — 3개 디자인 시안 (Mission Control / Ops Grid / NOC Terminal)</div>
+        <div class="cm">/agent-command-center/ · updated 2026-07-08</div>
+      </a>
+  </main>
+  <div class="foot">Anyone with a link can view. Managed via share-publish.sh.</div>
+</body></html>
