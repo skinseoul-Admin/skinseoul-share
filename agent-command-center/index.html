@@ -714,7 +714,79 @@
   .noc-log .ll .ag { color: var(--primary-300); white-space: nowrap; }
   .noc-log .ll .m { color: rgba(255,255,255,0.7); }
 
+  /* ==================================================================
+     VARIANT D — UNIFIED (Ops Grid big picture + Terminal detail, light)
+     ================================================================== */
+  .imp-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 28px; }
+  .imp { background: var(--primary-50); border: 1px solid var(--primary-100); border-radius: var(--radius-lg); padding: 14px 18px; }
+  .imp .l { font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--primary-700); font-weight: var(--fw-medium); }
+  .imp .v { font-size: 24px; font-weight: var(--fw-bold); letter-spacing: -0.02em; color: var(--primary-700); margin-top: 5px; }
+  .imp .v small { font-size: 12px; font-weight: var(--fw-regular); color: var(--primary-600); opacity: 0.75; }
+  .imp .d { font-size: 11.5px; color: var(--fg-3); margin-top: 4px; }
+
+  .og-cards.full { grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); }
+
+  .un-detail { margin-top: 44px; }
+  .un-detail-h { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px;
+    padding-top: 28px; border-top: 1px solid var(--border-default); }
+  .un-detail-h h2 { font: var(--type-h6); letter-spacing: -0.02em; }
+  .un-detail-h .n { font-size: 13px; color: var(--fg-3); }
+
+  .un-panel { background: #fff; border: 1px solid var(--border-default); border-radius: var(--radius-lg);
+    padding: 16px 18px; box-shadow: var(--shadow-xs); }
+  .un-panel-h { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .un-panel-h .h { font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--fg-3); font-weight: var(--fw-semibold); }
+  .un-panel-h .c { font-size: 11px; color: var(--fg-4); font-family: var(--font-mono); }
+
+  /* light heatmap recolor */
+  .un-heat .heat-row .hl { color: var(--fg-2); }
+  .un-heat .hc.l0 { background: #EFEDF4; }
+  .un-heat .hc.l1 { background: var(--primary-200); }
+  .un-heat .hc.l2 { background: var(--primary-300); }
+  .un-heat .hc.l3 { background: var(--primary-500); }
+  .un-heat .hc.warn { background: var(--warning-400); }
+  .un-heat .hc.err { background: var(--error-400); }
+  .heat-legend { display: flex; align-items: center; gap: 5px; font-size: 10.5px; color: var(--fg-4); }
+  .heat-legend .hc { flex: none; width: 14px; }
+
+  .un-grid { display: grid; grid-template-columns: 224px 1fr 320px; gap: 16px; margin-top: 16px; align-items: start; }
+
+  /* light sidebar list (NOC left-list style) */
+  .un-side { padding: 12px 10px; }
+  .un-side .grp { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-4);
+    margin: 12px 8px 5px; display: flex; justify-content: space-between; }
+  .un-side .grp:first-child { margin-top: 2px; }
+  .un-side .item { display: flex; align-items: center; gap: 9px; padding: 7px 8px; border-radius: 7px;
+    font-size: 12.5px; color: var(--fg-2); cursor: pointer; font-weight: var(--fw-medium); }
+  .un-side .item:hover { background: var(--bg-subtle); }
+  .un-side .item.sel { background: var(--primary-50); color: var(--primary-700); }
+  .un-side .item .lat { margin-left: auto; font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-4); font-weight: 400; }
+
+  /* light fleet table */
+  table.un-tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.un-tbl th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--fg-4); font-weight: var(--fw-semibold); padding: 7px 8px; border-bottom: 1px solid var(--border-default); }
+  table.un-tbl th.r, table.un-tbl td.r { text-align: right; }
+  table.un-tbl td { padding: 9px 8px; border-bottom: 1px solid var(--border-subtle); }
+  table.un-tbl tr:last-child td { border-bottom: 0; }
+  table.un-tbl tr:hover td { background: var(--bg-subtle); }
+  table.un-tbl .nm { font-weight: var(--fw-semibold); color: var(--fg-1); }
+  table.un-tbl .grp { color: var(--fg-4); font-size: 11px; }
+  table.un-tbl .mono { font-family: var(--font-mono); color: var(--fg-2); }
+
+  /* light event log */
+  .un-log { max-height: 320px; overflow-y: auto; }
+  .un-log .ll { display: flex; gap: 8px; padding: 5px 0; font-size: 11.5px; border-bottom: 1px solid var(--border-subtle); }
+  .un-log .ll:last-child { border-bottom: 0; }
+  .un-log .ts { font-family: var(--font-mono); color: var(--fg-4); white-space: nowrap; }
+  .un-log .ag { color: var(--primary-600); font-weight: var(--fw-medium); white-space: nowrap; }
+  .un-log .m { color: var(--fg-2); }
+  .un-log .ll.w .m { color: var(--warning-700); }
+  .un-log .ll.e .m { color: var(--error-700); }
+
   @media (max-width: 1200px) {
+    .imp-strip { grid-template-columns: repeat(2,1fr); }
+    .un-grid { grid-template-columns: 1fr; }
     .mc-grid { grid-template-columns: 1fr 1fr; }
     .mc-kpis { grid-template-columns: repeat(3,1fr); }
     .og-kpis { grid-template-columns: repeat(2,1fr); }
@@ -735,17 +807,18 @@
   </div>
   <div class="divider"></div>
   <div class="tabs" role="tablist">
-    <button class="tab" role="tab" aria-selected="true" data-target="A"><span class="num">01</span> Mission Control <span style="opacity:.5">· dark ops</span></button>
+    <button class="tab" role="tab" aria-selected="true" data-target="D"><span class="num">04</span> Unified <span style="opacity:.5">· grid + terminal</span></button>
+    <button class="tab" role="tab" aria-selected="false" data-target="A"><span class="num">01</span> Mission Control <span style="opacity:.5">· dark ops</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="B"><span class="num">02</span> Ops Grid <span style="opacity:.5">· brand light</span></button>
     <button class="tab" role="tab" aria-selected="false" data-target="C"><span class="num">03</span> NOC Terminal <span style="opacity:.5">· dense split</span></button>
   </div>
-  <div class="shotgun-hint">Design shotgun · 3 시안</div>
+  <div class="shotgun-hint">Design shotgun · 04 = combined</div>
 </div>
 
 <!-- ==================================================================
      VARIANT A — MISSION CONTROL
      ================================================================== -->
-<section class="variant" data-active="true" data-v="A">
+<section class="variant" data-v="A">
 <div class="mc"><div class="mc-inner">
 
   <div class="mc-top">
@@ -1082,6 +1155,193 @@
     </div>
   </aside>
 
+</div>
+</section>
+
+<!-- ==================================================================
+     VARIANT D — UNIFIED (Ops Grid overview + Terminal detail)
+     ================================================================== -->
+<section class="variant" data-active="true" data-v="D">
+<div class="og">
+  <div class="og-promo">8 of 10 agents operational&nbsp;&nbsp;&nbsp;15 drafts awaiting your approval&nbsp;&nbsp;&nbsp;3 alerts open</div>
+  <div class="og-head">
+    <div class="mark"><svg viewBox="0 0 160 160"><ellipse cx="65.5" cy="85" rx="31" ry="48" transform="rotate(-26 65.5 85)" fill="#fff"/><ellipse cx="94.5" cy="85" rx="31" ry="48" transform="rotate(26 94.5 85)" fill="#fff" opacity=".8"/></svg></div>
+    <div><h1>Agent Command Center</h1><div class="sub">Big picture up top, terminal detail below — one page.</div></div>
+    <div class="og-seg">
+      <button class="on">All</button><button>Marketing</button><button>Content</button><button>Ops</button>
+    </div>
+  </div>
+
+  <div class="og-body">
+    <!-- ================= BIG PICTURE (Ops Grid) ================= -->
+    <div class="og-kpis">
+      <div class="kpi-l accent"><div class="lab">Active Agents</div><div class="val">8<small>/10</small></div><div class="delta" style="color:rgba(255,255,255,.85)">2 blocked on connectors</div></div>
+      <div class="kpi-l"><div class="lab">Runs Today</div><div class="val">47</div><div class="delta up">▲ 12% vs yesterday</div><div class="spark" data-spark="8,11,9,14,12,16,13,18" data-w="60" data-color="brand"></div></div>
+      <div class="kpi-l"><div class="lab">Success Rate</div><div class="val">96.2<small>%</small></div><div class="delta flat">— stable 30d</div><div class="spark" data-spark="94,95,96,95,96,97,96" data-w="60" data-color="brand"></div></div>
+      <div class="kpi-l"><div class="lab">Pending Approval</div><div class="val">15</div><div class="delta up">drafts queued</div></div>
+      <div class="kpi-l"><div class="lab">Open Alerts</div><div class="val" style="color:var(--warning-600)">3</div><div class="delta down">1 critical</div></div>
+    </div>
+
+    <div class="imp-strip">
+      <div class="imp"><div class="l">Margin Lift · Pricing 7d</div><div class="v">+₩3.2<small>M</small></div><div class="d">312 SKUs repriced this run</div></div>
+      <div class="imp"><div class="l">Ad Spend Managed · 7d</div><div class="v">₩12.4<small>M</small></div><div class="d">Google + Meta, 26 campaigns</div></div>
+      <div class="imp"><div class="l">Hours Saved · This Week</div><div class="v">21<small>h</small></div><div class="d">digests, drafts, recaps automated</div></div>
+      <div class="imp"><div class="l">Approval Turnaround · p50</div><div class="v">4.1<small>h</small></div><div class="d">draft staged → decision</div></div>
+    </div>
+
+    <div class="og-section-h"><h2>Agent Fleet</h2><span class="n">10 agents · 4 groups</span></div>
+    <div class="og-cards full">
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--warning-exception-100);display:grid;place-items:center"><span class="dot warn" style="width:10px;height:10px"></span></span><div><div class="nm">Ads Command Center</div><div class="cat">Marketing · TAOU loop</div></div><span class="pill warn">Needs review</span></div>
+        <div class="mid"><div><div class="mlab">POAS</div><span class="metric">1.16 <small>/ 1.40</small></span></div><div class="spark" data-spark="1.31,1.28,1.24,1.22,1.19,1.17,1.16" data-w="88" data-color="warn"></div></div>
+        <div class="foot"><span>17 campaigns · gate <b>locked</b></span><span>2m ago</span></div>
+      </div>
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--primary-50);display:grid;place-items:center"><span class="dot run live" style="width:10px;height:10px"></span></span><div><div class="nm">Dynamic Pricing</div><div class="cat">Marketing · pricing engine</div></div><span class="pill run">Running</span></div>
+        <div class="mid"><div><div class="mlab">SKUs repriced</div><span class="metric">312 <small>/ 480</small></span></div><div class="spark" data-spark="4,6,5,8,9,11,13" data-w="88" data-color="brand"></div></div>
+        <div class="foot"><span>+2.4% <b>margin lift</b></span><span>running now</span></div>
+      </div>
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--success-exception-100);display:grid;place-items:center"><span class="dot ok" style="width:10px;height:10px"></span></span><div><div class="nm">Meta Ads Control</div><div class="cat">Marketing · REST</div></div><span class="pill ok">Healthy</span></div>
+        <div class="mid"><div><div class="mlab">ROAS 7d</div><span class="metric">3.82</span></div><div class="spark" data-spark="3.4,3.5,3.6,3.7,3.8,3.79,3.82" data-w="88" data-color="brand"></div></div>
+        <div class="foot"><span>9 adsets · <b>₩0.71M</b></span><span>18m ago</span></div>
+      </div>
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--success-exception-100);display:grid;place-items:center"><span class="dot ok" style="width:10px;height:10px"></span></span><div><div class="nm">Google Ads Control</div><div class="cat">Marketing · REST</div></div><span class="pill ok">Healthy</span></div>
+        <div class="mid"><div><div class="mlab">ROAS 7d</div><span class="metric">2.91</span></div><div class="spark" data-spark="3.1,3.0,2.95,2.9,2.88,2.9,2.91" data-w="88" data-color="brand"></div></div>
+        <div class="foot"><span>PMax + <b>Search</b></span><span>18m ago</span></div>
+      </div>
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--success-exception-100);display:grid;place-items:center"><span class="dot ok" style="width:10px;height:10px"></span></span><div><div class="nm">Slack Digest</div><div class="cat">Content · 6h 2-pass</div></div><span class="pill ok">Healthy</span></div>
+        <div class="mid"><div><div class="mlab">Msgs triaged today</div><span class="metric">341</span></div><div class="spark" data-spark="28,34,31,40,36,44,38" data-w="88" data-color="brand"></div></div>
+        <div class="foot"><span>7 surfaced → <b>#0-claude</b></span><span>1h ago</span></div>
+      </div>
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--primary-50);display:grid;place-items:center"><span class="dot run live" style="width:10px;height:10px"></span></span><div><div class="nm">Fireflies Distill</div><div class="cat">Content · every 6h</div></div><span class="pill run">Running</span></div>
+        <div class="mid"><div><div class="mlab">Recaps pending</div><span class="metric">3</span></div><div class="spark" data-spark="2,4,3,5,4,6,3" data-w="88" data-color="brand"></div></div>
+        <div class="foot"><span>ingesting <b>2 transcripts</b></span><span>running now</span></div>
+      </div>
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--bg-muted);display:grid;place-items:center"><span class="dot idle" style="width:10px;height:10px"></span></span><div><div class="nm">Graphify</div><div class="cat">Intelligence · weekly</div></div><span class="pill idle">Idle</span></div>
+        <div class="mid"><div><div class="mlab">Graph nodes</div><span class="metric">1,284</span></div><div class="spark" data-spark="1180,1205,1240,1260,1275,1280,1284" data-w="88" data-color="brand"></div></div>
+        <div class="foot"><span>next <b>Mon 07:05</b></span><span>6d ago</span></div>
+      </div>
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--success-exception-100);display:grid;place-items:center"><span class="dot ok" style="width:10px;height:10px"></span></span><div><div class="nm">Overnight Ops</div><div class="cat">Ops · Todoist 02:37</div></div><span class="pill ok">Healthy</span></div>
+        <div class="mid"><div><div class="mlab">Drafts prepared</div><span class="metric">12</span></div><div class="spark" data-spark="8,10,9,11,10,13,12" data-w="88" data-color="brand"></div></div>
+        <div class="foot"><span>awaiting <b>/morning</b></span><span>9h ago</span></div>
+      </div>
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--error-exception-100);display:grid;place-items:center"><span class="dot err" style="width:10px;height:10px"></span></span><div><div class="nm">Email Digest</div><div class="cat">Ops · cloud 6h</div></div><span class="pill err">Blocked</span></div>
+        <div class="mid"><div><div class="mlab">Status</div><span class="metric" style="font-size:17px;color:var(--error-600)">Connector off</span></div></div>
+        <div class="foot"><span>Slack link <b>missing</b></span><span>paused</span></div>
+      </div>
+
+      <div class="card-l">
+        <div class="top"><span class="av" style="background:var(--error-exception-100);display:grid;place-items:center"><span class="dot err" style="width:10px;height:10px"></span></span><div><div class="nm">Luma AI Events</div><div class="cat">Ops · Sun/Wed 09:00</div></div><span class="pill err">Blocked</span></div>
+        <div class="mid"><div><div class="mlab">Status</div><span class="metric" style="font-size:17px;color:var(--error-600)">Connector off</span></div></div>
+        <div class="foot"><span>Slack link <b>missing</b></span><span>paused</span></div>
+      </div>
+
+    </div>
+
+    <!-- ================= DETAIL (Terminal) ================= -->
+    <div class="un-detail">
+      <div class="un-detail-h"><h2>Operations Detail</h2><span class="n">terminal view · auto-refresh 30s</span></div>
+
+      <div class="un-panel un-heat">
+        <div class="un-panel-h">
+          <span class="h">Activity Heatmap · 24h</span>
+          <span class="heat-legend">less <span class="hc l0"></span><span class="hc l1"></span><span class="hc l2"></span><span class="hc l3"></span> more · <span class="hc warn"></span> degraded · <span class="hc err"></span> failed</span>
+        </div>
+        <div class="heat-row"><span class="hl">Ads Command Center</span><div class="heat-cells" data-heat="1,1,2,1,0,1,2,3,2,3,2,warn,1,2,3,2,warn,1,0,1,2,1,0,1"></div></div>
+        <div class="heat-row"><span class="hl">Dynamic Pricing</span><div class="heat-cells" data-heat="2,3,3,2,3,2,3,3,2,3,3,3,2,3,3,2,3,3,2,3,3,2,3,3"></div></div>
+        <div class="heat-row"><span class="hl">Meta Ads Control</span><div class="heat-cells" data-heat="0,1,0,1,2,1,0,2,1,0,1,2,1,0,1,2,1,0,1,0,1,2,0,1"></div></div>
+        <div class="heat-row"><span class="hl">Google Ads Control</span><div class="heat-cells" data-heat="0,1,1,0,2,1,0,1,2,0,1,1,2,0,1,1,0,2,1,0,1,1,0,1"></div></div>
+        <div class="heat-row"><span class="hl">Slack Digest</span><div class="heat-cells" data-heat="0,3,0,0,0,0,3,0,0,0,0,0,3,0,0,0,0,0,3,0,0,0,0,0"></div></div>
+        <div class="heat-row"><span class="hl">Fireflies Distill</span><div class="heat-cells" data-heat="2,0,0,0,0,0,2,0,0,0,0,0,2,0,0,0,0,0,2,0,0,0,0,3"></div></div>
+        <div class="heat-row"><span class="hl">Overnight Ops</span><div class="heat-cells" data-heat="0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"></div></div>
+        <div class="heat-row"><span class="hl">Email Digest</span><div class="heat-cells" data-heat="err,0,0,0,0,0,err,0,0,0,0,0,err,0,0,0,0,0,err,0,0,0,0,0"></div></div>
+      </div>
+
+      <div class="un-grid">
+        <!-- left: agent list -->
+        <div class="un-panel un-side">
+          <div class="grp"><span>Marketing</span><span>4</span></div>
+          <div class="item sel"><span class="dot warn"></span> Ads Command Center<span class="lat">2m</span></div>
+          <div class="item"><span class="dot run live"></span> Dynamic Pricing<span class="lat">now</span></div>
+          <div class="item"><span class="dot ok"></span> Meta Ads Control<span class="lat">18m</span></div>
+          <div class="item"><span class="dot ok"></span> Google Ads Control<span class="lat">18m</span></div>
+          <div class="grp"><span>Content</span><span>2</span></div>
+          <div class="item"><span class="dot ok"></span> Slack Digest<span class="lat">1h</span></div>
+          <div class="item"><span class="dot run live"></span> Fireflies Distill<span class="lat">now</span></div>
+          <div class="grp"><span>Intelligence</span><span>1</span></div>
+          <div class="item"><span class="dot idle"></span> Graphify<span class="lat">6d</span></div>
+          <div class="grp"><span>Operations</span><span>3</span></div>
+          <div class="item"><span class="dot ok"></span> Overnight Ops<span class="lat">9h</span></div>
+          <div class="item"><span class="dot err"></span> Email Digest<span class="lat">off</span></div>
+          <div class="item"><span class="dot err"></span> Luma AI Events<span class="lat">off</span></div>
+        </div>
+
+        <!-- center: fleet status table -->
+        <div class="un-panel">
+          <div class="un-panel-h"><span class="h">Fleet Status</span><span class="c">10 agents</span></div>
+          <div style="overflow-x:auto">
+          <table class="un-tbl">
+            <thead><tr><th>Agent</th><th>Status</th><th class="r">Success</th><th class="r">Runs 24h</th><th class="r">p95</th><th class="r">Cost 24h</th><th>Key metric</th><th>Next run</th></tr></thead>
+            <tbody>
+              <tr><td><div class="nm">Ads Command Center</div><div class="grp">Marketing</div></td><td><span class="pill warn">degraded</span></td><td class="r mono">100%</td><td class="r mono">6</td><td class="r mono">8.1s</td><td class="r mono">$0.42</td><td class="mono" style="color:var(--warning-700)">POAS 1.16 ↓</td><td class="mono">hourly</td></tr>
+              <tr><td><div class="nm">Dynamic Pricing</div><div class="grp">Marketing</div></td><td><span class="pill run">running</span></td><td class="r mono">98%</td><td class="r mono">10</td><td class="r mono">12.4s</td><td class="r mono">$1.86</td><td class="mono" style="color:var(--success-700)">+2.4% margin</td><td class="mono">now</td></tr>
+              <tr><td><div class="nm">Meta Ads Control</div><div class="grp">Marketing</div></td><td><span class="pill ok">healthy</span></td><td class="r mono">100%</td><td class="r mono">4</td><td class="r mono">2.1s</td><td class="r mono">$0.08</td><td class="mono">ROAS 3.82</td><td class="mono">on-demand</td></tr>
+              <tr><td><div class="nm">Google Ads Control</div><div class="grp">Marketing</div></td><td><span class="pill ok">healthy</span></td><td class="r mono">100%</td><td class="r mono">4</td><td class="r mono">2.4s</td><td class="r mono">$0.09</td><td class="mono">ROAS 2.91</td><td class="mono">on-demand</td></tr>
+              <tr><td><div class="nm">Slack Digest</div><div class="grp">Content</div></td><td><span class="pill ok">healthy</span></td><td class="r mono">100%</td><td class="r mono">4</td><td class="r mono">31s</td><td class="r mono">$0.31</td><td class="mono">341 triaged</td><td class="mono">19:30</td></tr>
+              <tr><td><div class="nm">Fireflies Distill</div><div class="grp">Content</div></td><td><span class="pill run">running</span></td><td class="r mono">96%</td><td class="r mono">4</td><td class="r mono">44s</td><td class="r mono">$0.22</td><td class="mono">3 recaps</td><td class="mono">now</td></tr>
+              <tr><td><div class="nm">Graphify</div><div class="grp">Intelligence</div></td><td><span class="pill idle">idle</span></td><td class="r mono">100%</td><td class="r mono">0</td><td class="r mono">—</td><td class="r mono">—</td><td class="mono">1,284 nodes</td><td class="mono">Mon 07:05</td></tr>
+              <tr><td><div class="nm">Overnight Ops</div><div class="grp">Operations</div></td><td><span class="pill ok">healthy</span></td><td class="r mono">100%</td><td class="r mono">1</td><td class="r mono">6m</td><td class="r mono">$0.95</td><td class="mono">12 drafts</td><td class="mono">02:37</td></tr>
+              <tr><td><div class="nm">Email Digest</div><div class="grp">Operations</div></td><td><span class="pill err">blocked</span></td><td class="r mono">—</td><td class="r mono">0</td><td class="r mono">—</td><td class="r mono">—</td><td class="mono" style="color:var(--error-600)">connector off</td><td class="mono">paused</td></tr>
+              <tr><td><div class="nm">Luma AI Events</div><div class="grp">Operations</div></td><td><span class="pill err">blocked</span></td><td class="r mono">—</td><td class="r mono">0</td><td class="r mono">—</td><td class="r mono">—</td><td class="mono" style="color:var(--error-600)">connector off</td><td class="mono">paused</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+
+        <!-- right: alerts + event log -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="un-panel">
+            <div class="un-panel-h"><span class="h">Active Alerts</span><span class="c">3 open</span></div>
+            <div class="attn crit" style="margin-top:0"><div class="t">POAS below target — 5-day decline</div><div class="d">Ads CC at 1.16 vs 1.40. Gate locked. → Requires CEO approval</div></div>
+            <div class="attn"><div class="t">2 cloud routines blocked</div><div class="d">Email + Luma · Slack connector not linked. → Link at claude.ai</div></div>
+            <div class="attn"><div class="t">15 drafts queued</div><div class="d">Overnight (12) + Fireflies (3). → Run /morning</div></div>
+          </div>
+
+          <div class="un-panel">
+            <div class="un-panel-h"><span class="h"><span class="dot live ok" style="margin-right:6px"></span>Event Log</span><span class="c blink" style="color:var(--success-600)">live</span></div>
+            <div class="un-log">
+              <div class="ll"><span class="ts">14:32:01</span><span class="ag">pricing</span><span class="m">SKU-4471 −6.2% → margin +2.4%</span></div>
+              <div class="ll"><span class="ts">14:31:44</span><span class="ag">fireflies</span><span class="m">ingest standup (32m)</span></div>
+              <div class="ll w"><span class="ts">14:30:12</span><span class="ag">ads-cc</span><span class="m">POAS below target — gate held</span></div>
+              <div class="ll"><span class="ts">14:28:55</span><span class="ag">meta-ads</span><span class="m">insights pulled · 9 adsets</span></div>
+              <div class="ll"><span class="ts">14:24:03</span><span class="ag">slack</span><span class="m">7 msgs surfaced to #0-claude</span></div>
+              <div class="ll"><span class="ts">14:19:31</span><span class="ag">pricing</span><span class="m">batch 6/10 · 48 SKUs evaluated</span></div>
+              <div class="ll e"><span class="ts">14:02:10</span><span class="ag">email</span><span class="m">run skipped — connector unavailable</span></div>
+              <div class="ll"><span class="ts">13:58:22</span><span class="ag">google-ads</span><span class="m">ROAS 7d recomputed · 2.91</span></div>
+              <div class="ll"><span class="ts">13:45:09</span><span class="ag">overnight</span><span class="m">12 drafts staged for review</span></div>
+              <div class="ll"><span class="ts">13:30:00</span><span class="ag">slack</span><span class="m">digest cycle start</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 
